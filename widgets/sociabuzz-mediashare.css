@@ -57,4 +57,4 @@ html,body{overflow:hidden!important}
 
 /* t30 Angela widget polish: keep artwork on alert card only */
 .card,.subathon-container,#ms_container,#__next > div{position:relative!important;isolation:isolate!important;overflow:hidden!important}
-.card .card-header,.sub_judul,.style-1.text-container{text-shadow:0 0 10px rgba(255,188,226,.62)!important}
+.card .card-header{padding-top:10px!important}.card .card-header,.sub_judul,.style-1.text-container{text-shadow:0 0 10px rgba(255,188,226,.62)!important}
