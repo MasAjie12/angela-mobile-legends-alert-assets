@@ -1,0 +1,41 @@
+# -*- coding: utf-8 -*-
+"""Generate local preview from production alert/widget files."""
+from pathlib import Path
+import re
+
+BASE = Path(__file__).parent
+W = BASE / 'widgets'
+OUT = BASE / 'preview-angela-mobile-legends.html'
+
+def clean_css(name):
+    text = (W / name).read_text(encoding='utf-8')
+    text = re.sub(r'(?:html\s*,\s*)?body\s*\{[^}]*overflow[^}]*hidden[^}]*\}', '', text, flags=re.I)
+    return text
+
+def dummy(text, sb=True):
+    return (text.replace('{amount}', 'IDR 1.000.000').replace('{message}', 'Makasih banyak supportnya, Angela siap menemani live!')
+        .replace('{supporter}', 'AuliaBunga').replace('{from_text}', 'dari Sociabuzz')
+        .replace('{donator}', 'MasAjiSquad'))
+
+sb_alert = dummy((BASE/'sociabuzz-alert.html').read_text(encoding='utf-8'))
+sw_alert = dummy((BASE/'saweria-alert.html').read_text(encoding='utf-8'), False)
+alert_css = (BASE/'sociabuzz-alert.css').read_text(encoding='utf-8')
+sb_files = ['sociabuzz-top-donator.css','sociabuzz-milestone.css','sociabuzz-subathon.css','sociabuzz-queue.css','sociabuzz-top-donator-runningtext.css']
+sb_css = '\n'.join(clean_css(n) for n in sb_files)
+sw_css = '\n'.join(clean_css(n).replace('#__next > div', '.sw-root') for n in ['saweria-top-donator.css','saweria-milestone.css','saweria-subathon.css'])
+
+HTML = f'''<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Angela Mobile Legends — Custom Alert</title><style>
+html,body{{margin:0;padding:0;background:#211145;color:#fff;font-family:Segoe UI,Trebuchet MS,sans-serif}}body{{padding:24px 16px 60px}}h1{{text-align:center;margin:0 0 6px;font-size:28px;color:#FFE6F5}}.sub{{text-align:center;color:#FFD0EA;font-size:13px;margin:0 0 28px}}.section{{margin:0 auto 32px;max-width:1040px}}.section h2{{font-size:14px;text-transform:uppercase;letter-spacing:1.4px;color:#F39BC8;margin:0 0 10px;border-left:3px solid #F39BC8;padding-left:10px}}.alert-wrap{{display:flex;flex-wrap:wrap;gap:18px;justify-content:center;min-width:0}}.alert-box{{flex:1 1 420px;min-width:0;width:100%;max-width:760px;box-sizing:border-box}}.widget-grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}}.widget-box{{background:#3A2670;border:1px solid #70408D;border-radius:12px;padding:14px;box-shadow:0 8px 24px rgba(20,8,57,.35)}}.widget-box h3{{margin:0 0 8px;font-size:12px;text-transform:uppercase;letter-spacing:1.2px;color:#FFD0EA}}.widget-box iframe{{width:100%;height:220px;border:0;border-radius:8px;background:#211145}}.widget-box.running iframe{{height:60px}}.widget-box.mediashare iframe{{height:260px}}pre{{background:#211145;border:1px solid #70408D;border-radius:8px;padding:12px;font-size:11px;overflow:auto;white-space:pre-wrap;word-break:break-all;color:#FFF1FA}}{alert_css}{sb_css}{sw_css}</style></head><body>
+<h1>Angela Mobile Legends Theme</h1><p class="sub">Custom alert lengkap — Sociabuzz + Saweria</p>
+<div class="section"><h2>Alert Card</h2><div class="alert-wrap"><div class="alert-box"><h3>Sociabuzz</h3>{sb_alert}</div><div class="alert-box"><h3>Saweria</h3>{sw_alert}</div></div></div>
+<div class="section"><h2>Widget Sociabuzz</h2><div class="widget-grid">
+<div class="widget-box"><h3>Top Donator</h3><iframe srcdoc="&lt;style>{clean_css('sociabuzz-top-donator.css').replace(chr(34),chr(39))}&lt;/style>&lt;div class='w-top'>&lt;div class='card'>&lt;div class='card-header'>&lt;h4>Top Donator&lt;/h4>&lt;/div>&lt;table class='show_donate'>&lt;tr>&lt;td>1&lt;/td>&lt;td>&lt;span class='text-limit'>AuliaBunga&lt;/span>&lt;/td>&lt;td>&lt;span class='text-limit-r'>Rp 500.000&lt;/span>&lt;/td>&lt;/tr>&lt;tr>&lt;td>2&lt;/td>&lt;td>&lt;span class='text-limit'>MasAjiSquad&lt;/span>&lt;/td>&lt;td>&lt;span class='text-limit-r'>Rp 250.000&lt;/span>&lt;/td>&lt;/tr>&lt;/table>&lt;/div>&lt;/div>"></iframe></div>
+<div class="widget-box"><h3>Milestone</h3><iframe srcdoc="&lt;style>{clean_css('sociabuzz-milestone.css').replace(chr(34),chr(39))}&lt;/style>&lt;div class='w-mile'>&lt;div class='card'>&lt;div class='card-header'>&lt;h4>Target Donasi&lt;/h4>&lt;/div>&lt;div class='progress'>&lt;div class='progress-bar' style='width:65%'>&lt;/div>&lt;/div>&lt;div class='center_progress'>&lt;h4>Rp 650.000 / Rp 1.000.000&lt;/h4>&lt;/div>&lt;/div>&lt;/div>"></iframe></div>
+<div class="widget-box"><h3>Subathon</h3><iframe srcdoc="&lt;style>{clean_css('sociabuzz-subathon.css').replace(chr(34),chr(39))}&lt;/style>&lt;div class='w-sub'>&lt;div class='subathon-container'>&lt;div class='sub_judul'>&lt;strong>Subathon Timer&lt;/strong>&lt;/div>&lt;div class='sub_timer'>&lt;span>02&lt;/span>:&lt;span>34&lt;/span>:&lt;span>56&lt;/span>&lt;/div>&lt;/div>&lt;/div>"></iframe></div>
+<div class="widget-box"><h3>Queue</h3><iframe srcdoc="&lt;style>{clean_css('sociabuzz-queue.css').replace(chr(34),chr(39))}&lt;/style>&lt;div class='w-queue'>&lt;div class='card'>&lt;div class='card-header'>&lt;h4>Antrian Angela&lt;/h4>&lt;/div>&lt;table class='show_donate'>&lt;tr>&lt;td>1&lt;/td>&lt;td>&lt;span class='text-limit'>User123&lt;/span>&lt;/td>&lt;/tr>&lt;/table>&lt;/div>&lt;/div>"></iframe></div>
+<div class="widget-box running"><h3>Running Text</h3><iframe srcdoc="&lt;style>{clean_css('sociabuzz-top-donator-runningtext.css').replace(chr(34),chr(39))}&lt;/style>&lt;div class='custom-font'>&lt;marquee class='text-center' scrollamount='5'>&lt;strong>ANGELA SWEETHEART&lt;/strong> AuliaBunga Rp 500.000 · MasAjiSquad Rp 250.000&lt;/marquee>&lt;/div>"></iframe></div>
+<div class="widget-box mediashare"><h3>MediaShare</h3><iframe srcdoc="&lt;style>{clean_css('sociabuzz-mediashare.css').replace(chr(34),chr(39))}&lt;/style>&lt;div id='ms_container'>&lt;div class='wrapper'>&lt;div class='media-container'>&lt;div class='media-main'>♪ Live Song&lt;/div>&lt;div class='loadingbar'>&lt;/div>&lt;/div>&lt;div class='style-1 text-container'>&lt;div class='title'>&lt;span id='sender'>AuliaBunga&lt;/span>&lt;span class='dari'>dari&lt;/span>&lt;span id='nominal'>Rp 50.000&lt;/span>&lt;div id='message'>Request Angela song&lt;/div>&lt;/div>&lt;/div>&lt;/div>"></iframe></div></div></div>
+<div class="section"><h2>Widget Saweria</h2><div class="widget-grid"><div class="widget-box"><h3>Top Donator</h3><iframe srcdoc="&lt;style>{clean_css('saweria-top-donator.css').replace(chr(34),chr(39)).replace('#__next > div','.sw-root')}&lt;/style>&lt;div class='sw-root'>&lt;div class='card'>&lt;div class='card-header'>&lt;h4>Top Donator&lt;/h4>&lt;/div>&lt;table class='show_donate'>&lt;tr>&lt;td>1&lt;/td>&lt;td>&lt;span class='text-limit'>MasAjiSquad&lt;/span>&lt;/td>&lt;td>&lt;span class='text-limit-r'>Rp 750.000&lt;/span>&lt;/td>&lt;/tr>&lt;/table>&lt;/div>&lt;/div>"></iframe></div><div class="widget-box"><h3>Milestone</h3><iframe srcdoc="&lt;style>{clean_css('saweria-milestone.css').replace(chr(34),chr(39)).replace('#__next > div','.sw-root')}&lt;/style>&lt;div class='sw-root'>&lt;div class='card'>&lt;div class='card-header'>&lt;h4>Target Donasi&lt;/h4>&lt;/div>&lt;div class='progress'>&lt;div class='progress-bar' style='width:75%'>&lt;/div>&lt;/div>&lt;div class='center_progress'>&lt;h4>Rp 750.000 / Rp 1.000.000&lt;/h4>&lt;/div>&lt;/div>&lt;/div>"></iframe></div><div class="widget-box"><h3>Subathon</h3><iframe srcdoc="&lt;style>{clean_css('saweria-subathon.css').replace(chr(34),chr(39)).replace('#__next > div','.sw-root')}&lt;/style>&lt;div class='sw-root'>&lt;div class='subathon-container'>&lt;div class='sub_judul'>&lt;strong>Subathon Timer&lt;/strong>&lt;/div>&lt;div class='sub_timer'>&lt;span>01&lt;/span>:&lt;span>45&lt;/span>:&lt;span>22&lt;/span>&lt;/div>&lt;/div>&lt;/div>"></iframe></div><div class="widget-box mediashare"><h3>MediaShare</h3><iframe srcdoc="&lt;style>{clean_css('saweria-mediashare.css').replace(chr(34),chr(39)).replace('#__next > div','.sw-root')}&lt;/style>&lt;div id='__next'>&lt;div>&lt;div class='chakra-heading'>Angela MediaShare&lt;/div>&lt;div class='media-message'>Requested by MasAjiSquad&lt;/div>&lt;/div>&lt;/div>"></iframe></div></div></div>
+<div class="section"><h2>Production Files</h2><pre>{(BASE/'sociabuzz-alert.html').read_text(encoding='utf-8')}</pre><pre>{(BASE/'sociabuzz-alert.css').read_text(encoding='utf-8')}</pre></div></body></html>'''
+OUT.write_text(HTML, encoding='utf-8')
+print('preview written', OUT, len(HTML.encode()))

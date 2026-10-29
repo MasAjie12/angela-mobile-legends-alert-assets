@@ -1,0 +1,81 @@
+/* MEDIA SHARE — runtime selectors: #__next > div shell, #__next > div themed card */
+html,body{overflow:hidden!important}
+
+#__next > div{box-sizing:border-box;position:relative;isolation:isolate;min-height:120px!important;margin:0!important;padding:18px 16px!important;overflow:hidden!important;border:3px solid #F39BC8!important;border-radius:18px!important;background-image:linear-gradient(rgba(10,44,82,.88),rgba(50,26,104,.94)),url("https://raw.githubusercontent.com/MasAjie12/angela-mobile-legends-alert-assets/main/bg.png")!important;background-size:cover!important;background-position:center!important;color:#70408D!important;text-align:center;box-shadow:0 12px 30px rgba(3,14,30,.58),0 0 24px rgba(243,155,200,.28),inset 0 0 0 2px rgba(255,255,255,.52)!important;animation:an30-sw-ms-in .65s cubic-bezier(.2,.9,.3,1.12) forwards,an30-sw-ms-breathe 5.4s ease-in-out infinite}
+#__next > div.hide,#__next > div .hide,#__next > div .wrapper.hide{display:none!important;opacity:0!important;visibility:hidden!important}
+@keyframes an30-sw-ms-in{from{opacity:0;transform:translateY(18px) scale(.96)}to{opacity:1;transform:none}}
+@keyframes an30-sw-ms-breathe{0%,100%{box-shadow:0 12px 30px rgba(3,14,30,.58),0 0 20px rgba(243,155,200,.18)}50%{box-shadow:0 14px 34px rgba(3,14,30,.64),0 0 30px rgba(243,155,200,.36)}}
+#__next > div::before{content:"";position:absolute;z-index:5;top:5px;left:0;width:42%;height:2px;background:linear-gradient(90deg,transparent,#F39BC8,transparent);box-shadow:0 0 12px rgba(243,155,200,.55);animation:an30-sw-ms-sweep 3.4s linear infinite;pointer-events:none}
+@keyframes an30-sw-ms-sweep{from{transform:translateX(-120%)}to{transform:translateX(345%)}}
+#__next > div::after{content:"💗  ✦  💗";position:absolute;z-index:3;right:12px;bottom:7px;color:rgba(184,106,217,.55);font-size:13px;letter-spacing:4px;animation:an30-sw-ms-sway 3.2s ease-in-out infinite;pointer-events:none}
+@keyframes an30-sw-ms-sway{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2deg)}}
+#__next > div > *{position:relative;z-index:2;color:#FFF8FD}
+
+/* ==== TOKEN & TEKS (DOM ASLI Saweria mediashare, diverifikasi 29 Sep) ====
+   #__next > div                = kartu/root (chakra-stack)
+   #__next > div > div:last-child     = baris token (pakai inline style dari Saweria)
+   ... > div                    = baris teks (nama + "template" + nominal)
+   ... > div > div.chakra-stack      = nama donatur (kamu login / ada badge)
+   ... > div > p[style*="inline"]    = nama (anonim) + nominal  (inline style ungu!)
+   ... > div > p:not([style])        = pesan / message
+   #__next [role="progressbar"]  = bar progres (j advancements: chakra, BUKAN .loadingbar)
+   ======================================================================== */
+#__next > div > div:last-child{background:rgba(4,16,36,.62)!important;color:#FFF8FD!important;font-family:'Trebuchet MS','Segoe UI',sans-serif!important;font-size:30px!important;font-weight:800!important;font-style:normal!important;text-align:center!important;text-transform:none!important;border:2px solid rgba(243,155,200,.45)!important;border-radius:16px!important;box-shadow:0 8px 22px rgba(0,0,0,.5)!important;margin:10px 6px!important;padding:7px 12px!important;overflow:hidden!important}
+#__next > div > div:last-child > div{color:#FFF8FD!important;font-family:'Trebuchet MS','Segoe UI',sans-serif!important;font-size:30px!important;line-height:1.25!important;text-shadow:0 3px 8px rgba(0,0,0,.85)!important}
+/* nama donatur (akun login -> div.chakra-stack + badge) */
+#__next > div > div:last-child > div > div.chakra-stack{color:#FFF8FD!important;font-family:'Trebuchet MS','Segoe UI',sans-serif!important;align-items:center!important;gap:6px!important;text-shadow:0 3px 8px rgba(0,0,0,.85)!important}
+#__next > div > div:last-child > div > div.chakra-stack > div:first-child{color:#FFF8FD!important;font-weight:800!important;letter-spacing:.4px!important}
+#__next > div > div:last-child > div > div.chakra-stack img{width:1.7em!important;height:1.7em!important}
+/* nama (anonim) + nominal -> p ber-inline-style, harus !important */
+#__next > div > div:last-child > div > p[style*="inline"]{color:#FFD0EA!important;font-family:'Trebuchet MS','Segoe UI',sans-serif!important;font-size:30px!important;font-weight:900!important;font-style:normal!important;text-shadow:0 3px 0 #70408D,0 6px 14px rgba(0,0,0,.7)!important;white-space:nowrap!important}
+/* pesan */
+#__next > div > div:last-child > div > p:not([style]){display:block!important;max-width:92%!important;margin:7px auto 0!important;color:#E4F4FF!important;font-family:'Comic Sans MS','Trebuchet MS',cursive!important;font-size:16px!important;font-style:italic!important;line-height:1.35!important;text-shadow:0 2px 8px rgba(0,0,0,.85)!important}
+#__next > div > div:last-child > div > p:not([style]):empty{display:none!important}
+/* bar progres asli (chakra progress) */
+#__next > div > div:first-child > div:last-child{position:relative!important;height:8px!important;margin-top:8px!important;background:rgba(4,16,36,.72)!important;border:1px solid rgba(243,155,200,.35)!important;border-radius:999px!important;overflow:hidden!important}
+#__next [role="progressbar"]{background:linear-gradient(90deg,#F39BC8,#FFD0EA)!important;background-image:linear-gradient(90deg,#F39BC8,#FFD0EA)!important;border:0!important;border-radius:999px!important;box-shadow:0 0 10px rgba(243,155,200,.8)!important}
+@media(max-width:700px){#__next > div > div:last-child > div,#__next > div > div:last-child > div > p[style*="inline"]{font-size:clamp(18px,5.2vw,24px)!important}#__next > div > div:last-child > div > p:not([style]){font-size:14px!important}}
+
+
+/* varian TEKS: video disembunyiin, token tetap tema */
+#__next .chakra-aspect-ratio{display:none!important}
+#__next > div > div:first-child{display:block!important;min-height:0!important;padding-top:2px!important}
+
+/* t30 loading bar durasi — kuning emas, gaya Poseidon, di atas card */
+#__next > div .loadingbar{display:block!important;position:absolute;z-index:6;top:6px;left:12px;right:12px;width:auto!important;max-width:none!important;height:5px!important;margin:0!important;background:rgba(112,64,141,.68)!important;border:1px solid rgba(243,155,200,.30)!important;border-radius:999px!important;box-shadow:none!important;opacity:1!important;visibility:visible!important;overflow:hidden}
+#__next > div .loadingbar svg{display:block;width:100%;height:100%}
+#__next > div .loadingbar svg path:first-child{stroke:rgba(112,64,141,0)!important}
+#__next > div .loadingbar svg path:last-child{stroke:#F39BC8!important;filter:drop-shadow(0 0 5px rgba(243,155,200,.85))!important}
+
+/* t30 Blue Butterfly karakter besar 3em + animasi ubur-ubur & gelembung + floating bunga laut */
+#__next > div > div:last-child{background:linear-gradient(135deg, rgba(243,155,200,.08) 0%, rgba(243,155,200,.04) 100%),repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(243,155,200,.05) 10px, rgba(243,155,200,.05) 20px)!important;position:relative!important}
+#__next > div > div:last-child::before{content:"💗"!important;position:absolute!important;top:10px!important;right:14px!important;font-size:26px!important;opacity:.85!important;filter:drop-shadow(0 0 6px rgba(124,107,255,.6))!important;animation:an30-jelly 3.5s ease-in-out infinite alternate!important;pointer-events:none!important}
+#__next > div > div:last-child::after{content:"✨"!important;position:absolute!important;bottom:12px!important;left:14px!important;font-size:24px!important;opacity:.8!important;filter:drop-shadow(0 0 6px rgba(191,227,255,.7))!important;animation:an30-bubble 4s ease-in-out infinite alternate!important;pointer-events:none!important}
+/* kiri nama: login -> div.chakra-stack; anonim -> p pertama yang punya p[style] saudara */
+#__next > div > div:last-child > div > div.chakra-stack,
+#__next > div > div:last-child > div > p[style*="inline"]{position:relative!important}
+#__next > div > div:last-child > div > div.chakra-stack::before,
+#__next > div > div:last-child > div > p[style*="inline"]:has(+ p[style*="inline"])::before,
+/* kanan nominal: p[style] terakhir sebelum pesan */
+#__next > div > div:last-child > div > p[style*="inline"]:not(:has(+ p[style*="inline"]))::after {
+  content:""!important;position:absolute!important;top:50%!important;width:3em!important;height:3em!important;transform:translateY(-50%)!important;
+  background:url("https://raw.githubusercontent.com/MasAjie12/angela-mobile-legends-alert-assets/main/hiasankananatas.png") center/contain no-repeat!important;
+  pointer-events:none;filter:drop-shadow(0 3px 8px rgba(0,0,0,.6)) saturate(1.08);
+}
+#__next > div > div:last-child > div > div.chakra-stack::before,
+#__next > div > div:last-child > div > p[style*="inline"]:has(+ p[style*="inline"])::before { right:100%!important; margin-right:10px!important; animation:an30-sw-char-l .5s cubic-bezier(.2,.9,.25,1.14) .25s both, an30-bob 2.8s ease-in-out infinite alternate!important; }
+#__next > div > div:last-child > div > p[style*="inline"]:not(:has(+ p[style*="inline"]))::after { left:100%!important; margin-left:10px!important; transform:translateY(-50%) scaleX(-1)!important; animation:an30-sw-char-r .5s cubic-bezier(.2,.9,.25,1.14) .25s both, an30-bob-flip 2.8s ease-in-out infinite alternate!important; }
+#__next > div > div:last-child > div > p:not([style])::after {
+  content:"🌸"!important;display:inline-block!important;margin-left:8px!important;font-size:18px!important;opacity:.75!important;animation:an30-flower 5s ease-in-out infinite alternate!important;
+}
+@keyframes an30-jelly{0%{transform:translate(0, 0) rotate(0deg)}50%{transform:translate(-6px, 8px) rotate(-10deg) scale(1.1)}100%{transform:translate(4px, -6px) rotate(8deg) scale(.95)}}
+@keyframes an30-bubble{0%{transform:translateY(0) scale(0.9);opacity:.4}50%{transform:translateY(-14px) translateX(6px) scale(1.1);opacity:.85}100%{transform:translateY(-26px) translateX(-4px) scale(1);opacity:.2}}
+@keyframes an30-bob{0%{transform:translateY(-50%)}100%{transform:translateY(-58%) rotate(-3deg)}}
+@keyframes an30-bob-flip{0%{transform:translateY(-50%) scaleX(-1)}100%{transform:translateY(-58%) scaleX(-1) rotate(3deg)}}
+@keyframes an30-flower{0%{transform:rotate(0deg) scale(1)}100%{transform:rotate(45deg) scale(1.15)}}
+@keyframes an30-sw-char-l{from{opacity:0;transform:translateY(-50%) translateX(-12px) scale(.7)}to{opacity:1;transform:translateY(-50%)}}
+@keyframes an30-sw-char-r{from{opacity:0;transform:translateY(-50%) scaleX(-1) translateX(12px) scale(.7)}to{opacity:1;transform:translateY(-50%) scaleX(-1)}}
+
+/* t30 Angela widget polish: keep artwork on alert card only */
+.card,.subathon-container,#ms_container,#__next > div{position:relative!important;isolation:isolate!important;overflow:hidden!important}
+.card .card-header,.sub_judul,.style-1.text-container{text-shadow:0 0 10px rgba(255,188,226,.62)!important}

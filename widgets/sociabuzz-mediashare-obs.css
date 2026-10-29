@@ -1,0 +1,60 @@
+/* MEDIA SHARE — runtime selectors: #ms_container shell, #ms_container themed card */
+html,body{overflow:hidden!important}
+
+#ms_container{box-sizing:border-box;position:relative;isolation:isolate;min-height:120px!important;margin:0!important;padding:18px 16px!important;overflow:hidden!important;border:3px solid #F39BC8!important;border-radius:18px!important;background-image:linear-gradient(rgba(10,44,82,.88),rgba(50,26,104,.94)),url("https://raw.githubusercontent.com/MasAjie12/angela-mobile-legends-alert-assets/main/bg.png")!important;background-size:cover!important;background-position:center!important;color:#70408D!important;text-align:center;box-shadow:0 12px 30px rgba(3,14,30,.58),0 0 24px rgba(243,155,200,.28),inset 0 0 0 2px rgba(255,255,255,.52)!important;animation:an30-sb-ms-in .65s cubic-bezier(.2,.9,.3,1.12) forwards,an30-sb-ms-breathe 5.4s ease-in-out infinite}
+#ms_container .wrapper.hide,#ms_container.hide,#ms_container .hide{display:none!important;opacity:0!important;visibility:hidden!important}
+@keyframes an30-sb-ms-in{from{opacity:0;transform:translateY(18px) scale(.96)}to{opacity:1;transform:none}}
+@keyframes an30-sb-ms-breathe{0%,100%{box-shadow:0 12px 30px rgba(3,14,30,.58),0 0 20px rgba(243,155,200,.18)}50%{box-shadow:0 14px 34px rgba(3,14,30,.64),0 0 30px rgba(243,155,200,.36)}}
+#ms_container::before{content:"";position:absolute;z-index:5;top:5px;left:0;width:42%;height:2px;background:linear-gradient(90deg,transparent,#F39BC8,transparent);box-shadow:0 0 12px rgba(243,155,200,.55);animation:an30-sb-ms-sweep 3.4s linear infinite;pointer-events:none}
+@keyframes an30-sb-ms-sweep{from{transform:translateX(-120%)}to{transform:translateX(345%)}}
+#ms_container::after{content:"💗  ✦  💗";position:absolute;z-index:3;right:12px;bottom:7px;color:rgba(184,106,217,.55);font-size:13px;letter-spacing:4px;animation:an30-sb-ms-sway 3.2s ease-in-out infinite;pointer-events:none}
+@keyframes an30-sb-ms-sway{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2deg)}}
+#ms_container > *{position:relative;z-index:2;color:#FFF8FD}
+
+#ms_container .text-container{position:relative!important;width:min(880px,96%,calc((100vh - 215px) * 16 / 9))!important;max-width:100%!important;box-sizing:border-box!important;background:rgba(4,16,36,.62)!important;color:#FFF8FD!important;font-family:'Trebuchet MS','Segoe UI',sans-serif!important;font-size:30px!important;font-weight:800!important;font-style:normal!important;text-align:center!important;text-transform:none!important;border:2px solid rgba(243,155,200,.45)!important;border-radius:16px!important;box-shadow:0 8px 22px rgba(0,0,0,.5)!important;margin:10px auto!important;padding:7px 12px!important;overflow:visible!important}
+#ms_container .title{display:flex!important;flex-wrap:wrap!important;align-items:center!important;justify-content:center!important;gap:6px 12px;margin:2px auto 0;line-height:1.2;max-width:100%!important}
+#ms_container #sender{order:1;min-width:0!important;max-width:100%!important;overflow-wrap:anywhere;color:#FFF8FD!important;font:800 30px 'Trebuchet MS','Segoe UI',sans-serif!important;text-shadow:0 3px 8px rgba(0,0,0,.85)}
+#ms_container .dari{order:2;display:inline-flex!important;align-items:center;justify-content:center;position:relative;width:38px;height:38px;font-size:0!important}
+#ms_container .dari::after{content:"💗"!important;font-size:28px;line-height:1;filter:drop-shadow(0 0 8px rgba(184,106,217,.75));animation:an30-sb-ms-sway 3.2s ease-in-out infinite}
+@keyframes an30-sb-ms-sway{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(6deg)}}
+#ms_container #nominal{order:3;min-width:0!important;max-width:100%!important;overflow-wrap:anywhere;color:#FFD0EA!important;font:900 30px 'Trebuchet MS','Segoe UI',sans-serif!important;text-shadow:0 3px 0 #70408D,0 6px 14px rgba(0,0,0,.7);white-space:nowrap}
+#ms_container #message,#ms_container .message{display:block!important;max-width:92%!important;margin:7px auto 0!important;color:#E4F4FF!important;font-family:'Comic Sans MS','Trebuchet MS',cursive!important;font-size:16px!important;font-style:italic!important;line-height:1.35!important;text-shadow:0 2px 8px rgba(0,0,0,.85)!important}
+#ms_container #message:empty,#ms_container .message:empty{display:none!important}
+@media(max-width:700px){#ms_container .text-container{padding:7px 12px!important}#ms_container #sender,#ms_container #nominal{font-size:clamp(18px,5.2vw,24px)!important}#ms_container #message{font-size:14px!important}}
+
+
+#ms_container .video-preview,#ms_container .thumbnail,#ms_container iframe,#ms_container video,#ms_container .media-progress{display:none!important}
+#ms_container .media-main{display:flex;justify-content:center;align-items:center;margin:4px 0;font-size:18px}
+#ms_container .media-message{margin-top:6px;font-size:14px}
+@media(max-width:700px){#ms_container #sender,#ms_container #nominal{font-size:clamp(18px,5.2vw,24px)!important}}
+
+/* kartu: flex column center; token + bar di flow normal (pola Poseidon) */
+#ms_container{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;padding:26px 16px 26px!important}
+#ms_container .wrapper{position:relative!important;top:auto!important;left:auto!important;display:block!important;padding:0!important;width:100%;text-align:center}
+#ms_container .media-container{display:block!important;margin:0;padding:0;width:100%;text-align:center}
+/* t30 loading bar durasi — kuning emas, di atas token */
+#ms_container .loadingbar{display:block!important;position:relative;z-index:6;width:min(880px,96%,calc((100vh - 215px) * 16 / 9))!important;max-width:100%!important;height:5px!important;margin:12px auto 14px!important;background:rgba(112,64,141,.68)!important;border:1px solid rgba(243,155,200,.30)!important;border-radius:999px!important;box-shadow:none!important;opacity:1!important;visibility:visible!important;overflow:hidden}
+#ms_container .loadingbar svg{display:block;width:100%;height:100%}
+#ms_container .loadingbar svg path:first-child{stroke:rgba(112,64,141,0)!important}
+#ms_container .loadingbar svg path:last-child{stroke:#F39BC8!important;filter:drop-shadow(0 0 5px rgba(243,155,200,.85))!important}
+
+/* t30 Blue Butterfly karakter besar 3em + animasi ubur-ubur & gelembung + floating bunga laut */
+#ms_container{background:linear-gradient(135deg, rgba(243,155,200,.08) 0%, rgba(243,155,200,.04) 100%),repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(243,155,200,.05) 10px, rgba(243,155,200,.05) 20px)!important;position:relative!important}
+#ms_container::before{content:"💗"!important;position:absolute!important;top:10px!important;right:14px!important;font-size:26px!important;opacity:.85!important;filter:drop-shadow(0 0 6px rgba(124,107,255,.6))!important;animation:an30-jelly 3.5s ease-in-out infinite alternate!important;pointer-events:none!important}
+#ms_container::after{content:"✨"!important;position:absolute!important;bottom:12px!important;left:14px!important;font-size:24px!important;opacity:.8!important;filter:drop-shadow(0 0 6px rgba(191,227,255,.7))!important;animation:an30-bubble 4s ease-in-out infinite alternate!important;pointer-events:none!important}
+#ms_container .text-container::before,#ms_container .text-container::after{content:""!important;position:absolute!important;top:50%!important;width:3em!important;height:3em!important;transform:translateY(-50%)!important;background:url("https://raw.githubusercontent.com/MasAjie12/angela-mobile-legends-alert-assets/main/hiasankananatas.png") center/contain no-repeat!important;pointer-events:none;filter:drop-shadow(0 3px 8px rgba(0,0,0,.6)) saturate(1.08);z-index:2!important}
+#ms_container .text-container::before{left:0!important;animation:an30-sb-char-l .5s cubic-bezier(.2,.9,.25,1.14) .25s both, an30-bob 2.8s ease-in-out infinite alternate!important}
+#ms_container .text-container::after{right:0!important;transform:translateY(-50%) scaleX(-1)!important;animation:an30-sb-char-r .5s cubic-bezier(.2,.9,.25,1.14) .25s both, an30-bob-flip 2.8s ease-in-out infinite alternate!important}
+#ms_container #message{position:relative!important}
+#ms_container #message::after{content:"🌸"!important;display:inline-block!important;margin-left:8px!important;font-size:18px!important;opacity:.75!important;animation:an30-flower 5s ease-in-out infinite alternate!important}
+@keyframes an30-jelly{0%{transform:translate(0, 0) rotate(0deg)}50%{transform:translate(-6px, 8px) rotate(-10deg) scale(1.1)}100%{transform:translate(4px, -6px) rotate(8deg) scale(.95)}}
+@keyframes an30-bubble{0%{transform:translateY(0) scale(0.9);opacity:.4}50%{transform:translateY(-14px) translateX(6px) scale(1.1);opacity:.85}100%{transform:translateY(-26px) translateX(-4px) scale(1);opacity:.2}}
+@keyframes an30-bob{0%{transform:translateY(-50%)}100%{transform:translateY(-58%) rotate(-3deg)}}
+@keyframes an30-bob-flip{0%{transform:translateY(-50%) scaleX(-1)}100%{transform:translateY(-58%) scaleX(-1) rotate(3deg)}}
+@keyframes an30-flower{0%{transform:rotate(0deg) scale(1)}100%{transform:rotate(45deg) scale(1.15)}}
+@keyframes an30-sb-char-l{from{opacity:0;transform:translateY(-50%) translateX(-12px) scale(.7)}to{opacity:1;transform:translateY(-50%)}}
+@keyframes an30-sb-char-r{from{opacity:0;transform:translateY(-50%) scaleX(-1) translateX(12px) scale(.7)}to{opacity:1;transform:translateY(-50%) scaleX(-1)}}
+
+/* t30 Angela widget polish: keep artwork on alert card only */
+.card,.subathon-container,#ms_container,#__next > div{position:relative!important;isolation:isolate!important;overflow:hidden!important}
+.card .card-header,.sub_judul,.style-1.text-container{text-shadow:0 0 10px rgba(255,188,226,.62)!important}

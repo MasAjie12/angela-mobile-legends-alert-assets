@@ -1,0 +1,49 @@
+body{background:transparent!important;margin:0;overflow:hidden;font-family:'Trebuchet MS','Segoe UI',sans-serif}
+#__next > div{box-sizing:border-box;position:relative;isolation:isolate;overflow:hidden;border:1px solid #F39BC8;border-radius:12px;background-image:linear-gradient(rgba(10,44,82,.88),rgba(50,26,104,.94)),url("https://raw.githubusercontent.com/MasAjie12/angela-mobile-legends-alert-assets/main/bg.png"),radial-gradient(ellipse at 12% 18%,rgba(112,64,141,.34) 0 7px,transparent 8px),radial-gradient(ellipse at 78% 28%,rgba(184,106,217,.28) 0 5px,transparent 6px),radial-gradient(ellipse at 26% 82%,rgba(112,64,141,.22) 0 6px,transparent 7px),linear-gradient(135deg,#5B4D9A,#24184F);color:#FFF8FD;box-shadow:0 0 25px rgba(112,64,141,.34),inset 0 0 22px rgba(112,64,141,.34);animation:an30-sw-top-in .6s cubic-bezier(.2,.9,.3,1.15) forwards,an30-sw-top-drift 13s ease-in-out infinite alternate,an30-sw-top-glow 3.4s ease-in-out infinite}
+@keyframes an30-sw-top-in{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes an30-sw-top-drift{from{background-position:0 0,0 0,0 0,0 0,0 0,0 0}to{background-position:0 0,0 0,10px -18px,-8px 14px,7px -11px,-10px 8px}}
+@keyframes an30-sw-top-glow{0%,100%{box-shadow:0 0 15px rgba(112,64,141,.34),inset 0 0 18px rgba(112,64,141,.34)}50%{box-shadow:0 0 38px rgba(112,64,141,.44),inset 0 0 28px rgba(112,64,141,.34)}}
+#__next > div::before{content:"";position:absolute;z-index:5;top:0;left:0;width:44%;height:2px;background:linear-gradient(90deg,transparent,#FFE6F5,transparent);box-shadow:0 0 10px rgba(112,64,141,.34);animation:an30-sw-top-sweep 3.2s linear infinite;pointer-events:none}
+@keyframes an30-sw-top-sweep{from{transform:translateX(-120%)}to{transform:translateX(340%)}}
+#__next > div::after{content:"";position:absolute;z-index:4;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,rgba(112,64,141,.40),transparent);animation:an30-hair 5s ease-in-out infinite;pointer-events:none}
+@keyframes an30-sw-top-float{0%,100%{transform:translateY(0) rotate(-6deg)}50%{transform:translateY(-10px) rotate(7deg)}}
+.sw-root .chakra-heading{margin:0 0 10px!important;padding:14px 16px 0!important;color:#FFF8FD!important;text-shadow:0 0 10px rgba(112,64,141,.34)!important;font:800 20px 'Trebuchet MS','Segoe UI',sans-serif!important;text-align:left;letter-spacing:1.5px;text-transform:uppercase;animation:an30-sw-top-pulse 2.4s ease-in-out infinite}
+@keyframes an30-sw-top-pulse{0%,100%{text-shadow:0 0 7px rgba(112,64,141,.34)}50%{text-shadow:0 0 18px rgba(112,64,141,.34),0 0 30px rgba(112,64,141,.44)}}
+#__next > div .css-9jay18{display:grid!important;grid-template-columns:30px minmax(0,1fr) auto;align-items:center;gap:8px;margin:5px 10px!important;padding:7px 9px!important;border:1px solid transparent;border-radius:10px;background:rgba(112,64,141,.18)!important;animation:an30-sw-top-row .45s ease forwards}
+#__next > div .css-9jay18:nth-of-type(1){animation-delay:.12s}.css-9jay18:nth-of-type(2){animation-delay:.25s}.css-9jay18:nth-of-type(3){animation-delay:.38s}.css-9jay18:nth-of-type(4){animation-delay:.51s}.css-9jay18:nth-of-type(5){animation-delay:.64s}
+@keyframes an30-sw-top-row{from{opacity:0;transform:translateX(-16px)}to{opacity:1;transform:translateX(0)}}
+.css-9jay18 p{margin:0!important;color:#FFF8FD!important;font-family:'Trebuchet MS','Segoe UI',sans-serif!important}
+.css-9jay18 .css-1vjv6qg{color:#FFE6F5!important;font-size:14px!important;font-weight:900!important;text-align:center}
+.css-9jay18 .css-jd1xht{color:#FFF8FD!important;font-size:14px!important}
+.css-9jay18 .css-jd1xht:last-child{color:#FFE6F5!important;font-weight:800!important;text-align:right;white-space:nowrap}
+.css-9jay18:first-of-type{border-color:rgba(112,64,141,.26)!important;box-shadow:0 0 12px rgba(112,64,141,.34)!important}
+.css-9jay18:first-of-type .css-jd1xht{color:#FFF8FD!important;text-shadow:0 0 9px rgba(112,64,141,.34)!important;animation:an30-sw-top-champ 2s ease-in-out 1.6s infinite}
+@keyframes an30-sw-top-champ{0%,100%{text-shadow:0 0 8px rgba(112,64,141,.34)}50%{text-shadow:0 0 20px rgba(112,64,141,.34),0 0 34px rgba(112,64,141,.44)}}
+
+@keyframes an30-hair{0%,100%{opacity:.25}50%{opacity:.9}}
+
+/* t30 Blue Butterfly decoration on Saweria runtime root */
+#__next > div::after{content:"💗";position:absolute;right:12px;bottom:8px;z-index:5;font-size:18px;opacity:.82;animation:an30-sw-sway 3s ease-in-out infinite;pointer-events:none}
+@keyframes an30-sw-sway{0%,100%{transform:rotate(-4deg) translateY(0)}50%{transform:rotate(4deg) translateY(-3px)}}
+
+/* t30 centered widget titles */
+.card-header,.card-header h4,.card-header h4 strong,.sub_judul,.sub_judul strong{text-align:center!important}
+.w-top .card .card-header,.w-mile .card .card-header,.w-queue .card .card-header{text-align:center!important}
+.w-top .card .card-header h4,.w-mile .card .card-header h4,.w-queue .card .card-header h4,.w-top .card .card-header h4 strong,.w-mile .card .card-header h4 strong,.w-queue .card .card-header h4 strong{text-align:center!important}
+.w-sub .subathon-container,.w-sub .subathon-container .sub_judul,.w-sub .subathon-container .sub_judul strong{text-align:center!important}
+#__next > div .chakra-heading,#__next > div .css-1fezxbg,#__next > div .css-1gz06j0,#__next > div .css-1gz06j0 .chakra-text{text-align:center!important}
+#__next > div .chakra-heading,#__next > div .css-1fezxbg,#__next > div .css-1gz06j0 .chakra-text{display:block!important;width:100%!important}
+
+/* t30 ANGELA SWEETHEART badge on every widget card */
+.card-header h4::after,.sub_judul::after{content:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='13'%3E%3Ctext x='0' y='10' font-family='sans-serif' font-size='9' font-weight='800' letter-spacing='1.4'%3E%3Ctspan fill='%232E7DFF'%3EBLUE %3C/tspan%3E%3Ctspan fill='%234FA8FF'%3E· %3C/tspan%3E%3Ctspan fill='%231E5FA8'%3EBUTTERFLY%3C/tspan%3E%3C/text%3E%3C/svg%3E");display:block;width:160px;height:13px;margin:4px auto 0}
+#__next > div .chakra-heading::after,#__next > div .css-1fezxbg::after,#__next > div .css-1gz06j0 .chakra-text::after{content:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='13'%3E%3Ctext x='0' y='10' font-family='sans-serif' font-size='9' font-weight='800' letter-spacing='1.4'%3E%3Ctspan fill='%232E7DFF'%3EBLUE %3C/tspan%3E%3Ctspan fill='%234FA8FF'%3E· %3C/tspan%3E%3Ctspan fill='%231E5FA8'%3EBUTTERFLY%3C/tspan%3E%3C/text%3E%3C/svg%3E");display:block;width:160px;height:13px;margin:4px auto 0}
+
+/* t30 top donator title */
+.w-top .card .card-header h4,.w-top .card .card-header h4 strong{font-size:0!important}
+.w-top .card .card-header h4::before{content:"ANGELA SWEETHEART LEADERBOARD";font-size:19px!important;letter-spacing:1.5px;text-transform:uppercase;color:#FFD0EA!important;text-shadow:0 2px 8px rgba(0,0,0,.85)}
+#__next > div > .chakra-heading{font-size:0!important}
+#__next > div > .chakra-heading::before{content:"ANGELA SWEETHEART LEADERBOARD";font-size:19px!important;letter-spacing:1.5px;text-transform:uppercase;color:#FFD0EA!important;text-shadow:0 2px 8px rgba(0,0,0,.85)}
+
+/* t30 Angela widget polish: keep artwork on alert card only */
+.card,.subathon-container,#ms_container,#__next > div{position:relative!important;isolation:isolate!important;overflow:hidden!important}
+.card .card-header,.sub_judul,.style-1.text-container{text-shadow:0 0 10px rgba(255,188,226,.62)!important}
